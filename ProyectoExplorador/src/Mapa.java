@@ -6,15 +6,18 @@ public class Mapa {
 
     public Mapa() {
 
-        for (int x = 0; x < tablero.length - 1; x++) {
+        for (int x = 0; x < tablero.length; x++) {
             for (int y = 0; y < tablero[x].length; y++) {
-                tablero[x][y] = 0;
-                if (x == 9) {
-                    int r = (int) (Math.random() * 101 + 0);
-                    tablero[x][r] = 2;
-                } else if (x > 1 && x <= tablero.length - 1) {
-// Crear randint entre 1 y 10
+                if (y != 0 && y != 9){
+                    tablero[x][y] = 0;
                 }
+                else if (y == 9) {
+                    y = tablero[x].length;
+                    int r = (int) (Math.random() * 11 + 1);
+                    tablero[y][r] = 2;
+                } else if (x !=1 && x != 9 ){
+                    int r = (int) (Math.random() * 101 + 1);
+                    tablero[x][r] = 2;                }
 
             }
         }
