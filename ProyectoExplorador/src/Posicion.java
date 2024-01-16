@@ -5,7 +5,7 @@ public class Posicion {
     public int getCoordenadaCol() {
         return coordenadaCol;
     }
-
+d
     public int getCoordenadaFila() {
         return coordenadaFila;
     }
