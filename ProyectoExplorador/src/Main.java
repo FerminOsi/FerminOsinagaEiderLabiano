@@ -32,7 +32,7 @@ import java.util.Scanner;
 
             }
         }
-
+                        ADSASD
     }
     public static void insertarEquipo(){
         System.out.println("Inserte el nombre del equipo");
