@@ -24,10 +24,10 @@ import java.util.Scanner;
 
             if (eleccion == 1){
                 insertarEquipo();
-            }
+            }Hola maricarmen
             else if(eleccion == 2){
                 insertarJugador();
-            }
+            }"Hola don jose"
             else if(eleccion == 3){
 
             }
