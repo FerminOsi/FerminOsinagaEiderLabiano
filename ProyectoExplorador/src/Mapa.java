@@ -17,8 +17,8 @@ public class Mapa {
                     tablero[y][r] = 2;
                 } else if (x !=1 && x != 9 ){
                     int r = (int) (Math.random() * 101 + 1);
-                    tablero[x][r] = 2;                }
-
+                    tablero[x][r] = 2;
+                }
             }
         }
         }

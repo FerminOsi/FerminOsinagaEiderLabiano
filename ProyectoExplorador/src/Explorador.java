@@ -4,7 +4,6 @@ public class Explorador {
     String nombre;
     Posicion posicionActual;
     Random r = new Random();
-d
     public Explorador(String nombre){
         this.nombre = nombre;
         posicionActual.setCoordenadaCol(0);
