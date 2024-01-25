@@ -33,7 +33,6 @@ public class Mapa {
     public int[][] getTablero () {
         return this.tablero;
     }
-
     public Posicion getPosTesoro () {
         return this.posTesoro;
     }
