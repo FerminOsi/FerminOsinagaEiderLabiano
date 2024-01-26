@@ -40,7 +40,7 @@ public class Explorador {
         int estado;
         if (mapa.getTablero()[posicionActual.getCoordenadaFila()][posicionActual.getCoordenadaCol()] == 1 ) {
             estado = 1;
-            System.out.println(getNombre() + "ha caído en una trampa.\nFin del juego.");
+            System.out.println(getNombre() + " ha caído en una trampa.\nFin del juego.");
         } else if (mapa.getTablero()[posicionActual.getCoordenadaFila()][posicionActual.getCoordenadaCol()] == 0) {
             System.out.println("No pasa nada. Sigue jugando...");
             estado = 0;

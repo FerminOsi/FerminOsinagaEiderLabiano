@@ -44,7 +44,7 @@ public class Main {
                     explorador.checkPosicion(tablero);
                 }
                 else if(opcion == 3) {
-                    System.out.println("Tiene " + explorador.explorar(tablero) + "trampas alrededor");
+                    System.out.println("Tiene " + explorador.explorar(tablero) + " trampas alrededor");
                 }
             }
         }
