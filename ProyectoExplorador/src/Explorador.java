@@ -23,47 +23,44 @@ public class Explorador {
     }
     public int explorar(Mapa mapa){
         int trampas = 0;
-                if (mapa.getTablero()[posicionActual.getCoordenadaFila()][posicionActual.getCoordenadaCol()+1] == 1)
-                {
-                    trampas++;
-                }else if (mapa.getTablero()[posicionActual.getCoordenadaFila()][posicionActual.getCoordenadaCol()-1] == 1)
-                {
-                    trampas++;
-                }else if (mapa.getTablero()[posicionActual.getCoordenadaFila()+1][posicionActual.getCoordenadaCol()] == 1)
-                {
-                    trampas++;
-                }else if (mapa.getTablero()[posicionActual.getCoordenadaFila()-1][posicionActual.getCoordenadaCol()] == 1)
-                {
-                    trampas++;
+        if (posicionActual.getCoordenadaCol() + 1 <= 9 && mapa.getTablero()[posicionActual.getCoordenadaFila()][posicionActual.getCoordenadaCol() + 1] == 1) {
+            trampas++;
+        } else if (posicionActual.getCoordenadaCol() - 1 >= 0 && mapa.getTablero()[posicionActual.getCoordenadaFila()][posicionActual.getCoordenadaCol() - 1] == 1) {
+            trampas++;
+        } else if (posicionActual.getCoordenadaFila() + 1 <= 9 && mapa.getTablero()[posicionActual.getCoordenadaFila() + 1][posicionActual.getCoordenadaCol()] == 1) {
+            trampas++;
+        } else if (posicionActual.getCoordenadaFila() - 1 >= 0 && mapa.getTablero()[posicionActual.getCoordenadaFila() - 1][posicionActual.getCoordenadaCol()] == 1) {
+            trampas++;
         }
+
         return trampas;
-        }
+    }
 
     public int  checkPosicion(Mapa mapa) {
         int estado;
-        if (mapa.getTablero()[posicionActual.getCoordenadaFila()][posicionActual.getCoordenadaCol()] == 1) {
-            System.out.println("Has reventado");
+        if (mapa.getTablero()[posicionActual.getCoordenadaFila()][posicionActual.getCoordenadaCol()] == 1 ) {
             estado = 1;
+            System.out.println(getNombre() + "ha caído en una trampa.\nFin del juego.");
         } else if (mapa.getTablero()[posicionActual.getCoordenadaFila()][posicionActual.getCoordenadaCol()] == 0) {
-            System.out.println("Sigues vivo, por poco tiempo");
+            System.out.println("No pasa nada. Sigue jugando...");
             estado = 0;
         }else {
             estado = 2;
-            System.out.println("Has ganado!");
+            System.out.println(getNombre() + "ha encontrado el tesoro.\nENHORABUENA.\nFin del juego.");
         }
         return estado;
     }
     public void moverse(int direccion){
-        if (direccion == 1){
-            posicionActual.setCoordenadaCol(posicionActual.getCoordenadaCol()-1);
-        }else if (direccion == 2){
-            posicionActual.setCoordenadaCol(posicionActual.getCoordenadaCol()+1);
-        }else if (direccion == 3){
+        if (direccion == 1 && posicionActual.getCoordenadaFila()-1 >= 0){
             posicionActual.setCoordenadaFila(posicionActual.getCoordenadaFila()-1);
-        }else if (direccion == 4){
+        }else if (direccion == 2 && posicionActual.getCoordenadaFila()+1 <= 9){
             posicionActual.setCoordenadaFila(posicionActual.getCoordenadaFila()+1);
+        }else if (direccion == 3 && posicionActual.getCoordenadaCol()-1 >= 0){
+            posicionActual.setCoordenadaCol(posicionActual.getCoordenadaCol()-1);
+        }else if (direccion == 4 && posicionActual.getCoordenadaCol()+1 <= 9){
+            posicionActual.setCoordenadaCol(posicionActual.getCoordenadaCol()+1);
         }else{
-            System.out.println("Se te ha caido la ficha del tablero");
+            System.out.println("Se te ha caido la ficha del tablero, introduce otra posicion valida");
     }
     }
 }
