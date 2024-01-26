@@ -41,7 +41,9 @@ public class Main {
                     int eleccion = sc.nextInt();
 
                     explorador.moverse(eleccion);
-                    explorador.checkPosicion(tablero);
+                    int resultado = explorador.checkPosicion(tablero);
+                    if (resultado == 2 || resultado == 1)
+                        opcion = 4;
                 }
                 else if(opcion == 3) {
                     System.out.println("Tiene " + explorador.explorar(tablero) + " trampas alrededor");
