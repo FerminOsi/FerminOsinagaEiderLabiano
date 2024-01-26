@@ -21,7 +21,7 @@ public class Main {
         explorador = new Explorador(nombre);
         tablero = new Mapa();
 
-            while (opcion != 5) {
+            while (opcion != 4) {
                 System.out.println("""
                         1. Ver posición actual del explorador\s
                         2. Mover explorador\s
